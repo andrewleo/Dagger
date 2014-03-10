@@ -16,6 +16,7 @@ import com.netease.dagger.GlobalSettings;
 public class TypeOperations {
 
 	BrowserEmulator be;
+	String hello = "hello";
 	String input = "hello wrold !";
 	String inputForIE = "hello\" \"world\" \"!";
 
@@ -41,10 +42,10 @@ public class TypeOperations {
 			RemoteWebDriver driver = be.getBrowserCore();
 			driver.switchTo().frame("ifm");
 			WebElement editable = driver.switchTo().activeElement();
-			be.inputKeyboard(inputForIE);
+			be.inputKeyboard(hello);
 			driver.switchTo().defaultContent();
 			be.click("//input[@value='提交<iframe>节点文本']");
-			be.expectElementExistOrNot(true, "//h1[contains(text(),'" + input + "')]", 5000);
+			be.expectElementExistOrNot(true, "//h1[contains(text(),'" + hello + "')]", 5000);
 			be.open("http://" + CommonFunction.ip + ":" + CommonFunction.port + "/type");
 		} else {
 			CommonFunction.typeInIframe(be, input);

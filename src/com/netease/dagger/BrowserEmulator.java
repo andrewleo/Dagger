@@ -337,7 +337,7 @@ public class BrowserEmulator {
 	 */
 	public void inputKeyboard(String text) {
 		String cmd = System.getProperty("user.dir") + "\\res\\SeleniumCommand.exe" + " sendKeys " + text;
-
+		logger.info("cmd " + cmd);
 		Process p = null;
 		try {
 			p = Runtime.getRuntime().exec(cmd);
@@ -345,7 +345,7 @@ public class BrowserEmulator {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			p.destroy();
+			// p.destroy();
 		}
 		logger.info("Pressed key with string " + text);
 	}

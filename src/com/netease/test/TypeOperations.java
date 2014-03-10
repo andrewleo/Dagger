@@ -48,7 +48,7 @@ public class TypeOperations {
 			be.inputKeyboard(inputForIE);
 			driver.switchTo().defaultContent();
 			be.click("//input[@value='提交<iframe>节点文本']");
-			be.expectElementExistOrNot(true, "//h1[contains(text(),'" + input + "')]", 5000);
+			be.expectElementExistOrNot(true, "//h1[contains(text(),'" + inputForIE + "')]", 5000);
 			be.open("http://" + CommonFunction.ip + ":" + CommonFunction.port + "/type");
 		} else {
 			CommonFunction.typeInIframe(be, input);

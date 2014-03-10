@@ -37,10 +37,6 @@ public class TypeOperations {
 	
 	@Test(dependsOnMethods = "typeIninput")
 	public void typeInIframe() {
-		CommonFunction.typeInIframe(be, input);
-	}
-	
-	public void typeInTextarea() {
 		if (GlobalSettings.browserCoreType == 3) {
 			RemoteWebDriver driver = be.getBrowserCore();
 			driver.switchTo().frame("ifm");
